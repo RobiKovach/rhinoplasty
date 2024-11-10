@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20241110120022">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241110151457">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,16 +16,16 @@
 	<div class="wrapper">
 		<header class="header">
 			<div class="header__container">
-				<a href="index.html" class="header__logo"><img src="img/logo.webp" alt="" class="header-logoimg"></a>
+				<a href="index.html" class="header__logo"><img src="img/logo.svg" alt="" class="header-logoimg"></a>
 				<div class="header__content">
 					<div class="header__menu menu">
 						<button type="button" class="menu__icon icon-menu"><span></span></button>
 						<nav class="menu__body">
 							<ul class="menu__list">
-								<li class="menu__item"><a href="" class="menu__link h6">Program</a></li>
-								<li class="menu__item"><a href="" class="menu__link h6">About the event</a></li>
-								<li class="menu__item"><a href="" class="menu__link h6">Speakers</a></li>
-								<li class="menu__item"><a href="" class="menu__link h6">Price</a></li>
+								<li class="menu__item"><a href="#" data-goto=".programme" class="menu__link h6">Program</a></li>
+								<li class="menu__item"><a href="#" data-goto=".discover" class="menu__link h6">About the event</a></li>
+								<li class="menu__item"><a href="#" data-goto=".speakers" class="menu__link h6">Speakers</a></li>
+								<li class="menu__item"><a href="#" data-goto=".block-price" class="menu__link h6">Price</a></li>
 							</ul>
 							<span class="circle-one"></span>
 							<span class="circle-two"></span>
@@ -47,7 +47,7 @@
 								</div>
 							</details>
 						</div>
-						<a data-da=".menu__body, 768" href="#" class="actions-header__btn h5">For partners</a>
+						<a data-da=".menu__body, 768" href="#" data-goto=".sponsors" class="actions-header__btn h5">For partners</a>
 					</div>
 				</div>
 			</div>
@@ -89,7 +89,7 @@
 								<p class="items-hero__text h6">participation packages</p>
 							</div>
 						</div>
-						<a href="#" class="content-hero__btn h3 button">Register now</a>
+						<a href="#" data-goto=".block-price" class="content-hero__btn h3 button">Register now</a>
 					</div>
 					<div data-da=".content-hero, 768, 3" class="hero__images images-hero">
 						<img src="img/hero-img-bg.webp" alt="" class="images-hero__img">
@@ -134,7 +134,7 @@
 			</section>
 			<section class="programme">
 				<div class="programme__container">
-					<h2 class="programme__title h2">Masterclass <span class="blue"> programme</span></h2>
+					<h2 class="programme__title h2">Masterclass <span class="blue"> program</span></h2>
 					<div class="programme__content content-programme">
 						<div class="content-programme__item item-programe">
 							<div class="item-programe__info">
@@ -146,9 +146,9 @@
 								</p>
 							</div>
 
-							<a href="#" class="item-programe__btn">
+							<a href="#" data-popup="#popup-day-one" class="item-programe__btn">
 								<img src="img/icon-programme.svg" alt="" class="item-programe__icon">
-								<p class="item-programe__btntext h6">Programme details</p>
+								<p class="item-programe__btntext h6">Program details</p>
 							</a>
 						</div>
 						<div class="content-programme__item item-programe programme-rotate-right">
@@ -159,9 +159,9 @@
 									in depth presentation from international staff.
 								</p>
 							</div>
-							<a href="#" class="item-programe__btn">
+							<a href="#" data-popup="#popup-day-two" class="item-programe__btn">
 								<img src="img/icon-programme.svg" alt="" class="item-programe__icon">
-								<p class="item-programe__btntext h6">Programme details</p>
+								<p class="item-programe__btntext h6">Program details</p>
 							</a>
 						</div>
 						<div class="content-programme__item item-programe center programme-rotate-left">
@@ -173,9 +173,9 @@
 								</p>
 							</div>
 
-							<a href="#" class="item-programe__btn">
+							<a href="#" data-popup="#popup-day-three" class="item-programe__btn">
 								<img src="img/icon-programme.svg" alt="" class="item-programe__icon">
-								<p class="item-programe__btntext h6">Programme details</p>
+								<p class="item-programe__btntext h6">Program details</p>
 							</a>
 						</div>
 					</div>
@@ -229,7 +229,7 @@
 									how to use advanced instruments, in particular:
 								</p>
 							</div>
-							<a data-da=".discover__container, 768" href="#" class="left-discover__bnt button h3">Register now</a>
+							<a data-da=".discover__container, 768" href="#" data-goto=".block-price" class="left-discover__bnt button h3">Register now</a>
 						</div>
 						<div class="items-discover__right right-discover">
 							<li class="right-discover__list h5">
@@ -260,39 +260,51 @@
 						<div class="speakers__wrapper swiper-wrapper">
 							<!-- Слайд -->
 							<div class="speakers__slide swiper-slide slide-speakers">
-								<a href="#" class="slide-speakers__link">
+								<a href="#" data-popup="#popup-pasha" class="slide-speakers__link">
 									<img src="img/slider/slide-1.webp" alt="" class="slide-speakers__img">
 									<p class="slide-speakers__name h5">Dr. Mesut Pasha</p>
 								</a>
 							</div>
 							<div class="speakers__slide swiper-slide slide-speakers">
-								<a href="#" class="slide-speakers__link">
+								<a href="#" data-popup="#popup-fazil" class="slide-speakers__link">
 									<img src="img/slider/slide-2.webp" alt="" class="slide-speakers__img">
 									<p class="slide-speakers__name h5">Dr. Fazıl Apaydın</p>
 								</a>
 							</div>
 							<div class="speakers__slide swiper-slide slide-speakers">
-								<a href="#" class="slide-speakers__link">
+								<a href="#" data-popup="#popup-can" class="slide-speakers__link">
 									<img src="img/slider/slide-3.webp" alt="" class="slide-speakers__img">
 									<p class="slide-speakers__name h5">Professor Dr.med. C. Can Cedidi</p>
 								</a>
 							</div>
 							<div class="speakers__slide swiper-slide slide-speakers">
-								<a href="#" class="slide-speakers__link">
+								<a href="#" data-popup="#popup-timur" class="slide-speakers__link">
 									<img src="img/slider/slide-4.webp" alt="" class="slide-speakers__img">
 									<p class="slide-speakers__name h5">Dr. Timur Taskesen</p>
 								</a>
 							</div>
 							<div class="speakers__slide swiper-slide slide-speakers">
-								<a href="#" class="slide-speakers__link">
+								<a href="#" data-popup="#popup-amin" class="slide-speakers__link">
 									<img src="img/slider/slide-5.webp" alt="" class="slide-speakers__img">
 									<p class="slide-speakers__name h5">Professor Mohamed Amin</p>
 								</a>
 							</div>
 							<div class="speakers__slide swiper-slide slide-speakers">
-								<a href="#" class="slide-speakers__link">
+								<a href="#" data-popup="#popup-antonio" class="slide-speakers__link">
 									<img src="img/slider/slide-6.webp" alt="" class="slide-speakers__img">
 									<p class="slide-speakers__name h5">Dr. António Sousa Vieira</p>
+								</a>
+							</div>
+							<div class="speakers__slide swiper-slide slide-speakers">
+								<a href="#" class="slide-speakers__link">
+									<img src="img/slider/slide-7.webp" alt="" class="slide-speakers__img">
+									<p class="slide-speakers__name h5">Secret Speaker</p>
+								</a>
+							</div>
+							<div class="speakers__slide swiper-slide slide-speakers">
+								<a href="#" class="slide-speakers__link">
+									<img src="img/slider/slide-7.webp" alt="" class="slide-speakers__img">
+									<p class="slide-speakers__name h5">Secret Speaker</p>
 								</a>
 							</div>
 						</div>
@@ -339,7 +351,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="programme">
+			<section class="programme block-price">
 				<div class="programme__container">
 					<h2 class="programme__title h2">PARTICIPATION <span class="blue"> PACKAGES</span></h2>
 					<div class="programme__content content-programme">
@@ -352,7 +364,7 @@
 							</div>
 							<p class="item-programe__price h4">900 CHF</p>
 
-							<a href="#" class="item-programe__btn">
+							<a href="#" data-popup="#popup-packet-one" class="item-programe__btn">
 								<img src="img/icon-programme.svg" alt="" class="item-programe__icon">
 								<p class="item-programe__btntext h6">Book now</p>
 							</a>
@@ -365,7 +377,7 @@
 								</p>
 							</div>
 							<p class="item-programe__price h4">1500 CHF</p>
-							<a href="#" class="item-programe__btn">
+							<a href="#" data-popup="#popup-packet-two" class="item-programe__btn">
 								<img src="img/icon-programme.svg" alt="" class="item-programe__icon">
 								<p class="item-programe__btntext h6">Book now</p>
 							</a>
@@ -379,7 +391,7 @@
 							</div>
 							<p class="item-programe__price h4">2000 CHF</p>
 
-							<a href="#" class="item-programe__btn">
+							<a href="#" data-popup="#popup-packet-three" class="item-programe__btn">
 								<img src="img/icon-programme.svg" alt="" class="item-programe__icon">
 								<p class="item-programe__btntext h6">Book now</p>
 							</a>
@@ -465,7 +477,7 @@
 						Take a step towards improving your skills <br class="pc-none"> and
 						<span class="blue">join leading surgeons</span> from <br class="pc-none"> around the world.
 					</p>
-					<a href="#" class="register__btn h3 button">Register</a>
+					<a href="#" data-goto=".block-price" class="register__btn h3 button">Register</a>
 					<span class="register__cirle-one"></span>
 					<span class="register__cirle-two"></span>
 					<span class="register__cirle-three"></span>
@@ -473,25 +485,492 @@
 					<span class="register__cirle-five"></span>
 				</div>
 			</section>
+			<a href="#" data-goto=".header" class="arrow-up">
+				<img src="img/arrow-up.svg" alt="Image">
+			</a>
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
 				<div class="footer__top top-footer">
 					<a href="index.html" class="top-footer__logo">
-						<img src="img/logo.webp" alt="Image">
+						<img src="img/logo.svg" alt="Image">
 					</a>
 					<div class="top-footer__menu">
-						<a href="" class="top-footer__link h6">Program</a>
-						<a data-da=".top-footer__menu, 768, 3" href="" class="top-footer__link h6">About the event</a>
-						<a href="" class="top-footer__link h6">Speakers</a>
-						<a href="" class="top-footer__link h6">Price</a>
+						<a href="#" data-goto=".programme" class="top-footer__link h6">Program</a>
+						<a data-da=".top-footer__menu, 768, 3" data-goto=".discover" href="#" class="top-footer__link h6">About the event</a>
+						<a href="#" data-goto=".speakers" class="top-footer__link h6">Speakers</a>
+						<a href="#" data-goto=".block-price" class="top-footer__link h6">Price</a>
 					</div>
 				</div>
 				<a href="https://www.mriya-digital.com/" class="footer__bottom bottom-footer h6">Made by MRiЯ AGENCY</a>
 			</div>
 		</footer>
+		<div id="popup-packet-one" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content form-width">
+					<button data-close type="button" class="popup__close">
+						<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="1" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path opacity="1" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<div class="popup__text">
+						<div class="popup__packet packet-popup">
+							<h2 class="packet-popup__title h2">Two-day online course (3-4 April)</h2>
+							<div class="packet-popup__content">
+								<div class="packet-popup__lists lists-packet">
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Exclusive presentations from leading speakers.</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Professional photos and marketing materials <br class="mob-none"> for participants.</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Certificate of completion of in-depth training.</p>
+									</li>
+									<li class="lists-packet__list">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Special VIP package for newcomers.</p>
+									</li>
+									<li class="lists-packet__list">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Practical day with cadaver training (3rd day).</p>
+									</li>
+									<li class="lists-packet__list">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Joint lunch with speakers for <br class="pc-none"> networking.</p>
+									</li>
+									<li class="lists-packet__list">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Accelerated registration for three-day participants.</p>
+									</li>
+									<li class="lists-packet__list">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Reserved parking space is provided.</p>
+									</li>
+									<li class="lists-packet__list">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Personalised concierge service.</p>
+									</li>
+								</div>
+								<div class="packet-popup__form form-packet">
+									<div class="form-packet__title h3">registration</div>
+									<form action="files/sendmail/webhoock.php" id="formone" class="popup__form form-popup" method="POST">
+										<div class="form-questions__body">
+											<input type="hidden" id="utm_source" name="utm_source">
+											<input type="hidden" id="utm_medium" name="utm_medium">
+											<input type="hidden" id="utm_campaign" name="utm_campaign">
+											<input type="hidden" id="utm_content" name="utm_content">
+											<input type="hidden" id="utm_term" name="utm_term">
+											<input type="text" data-validate data-required required name="email" data-error="Ім’я не вірне" placeholder="Name*" class="name h6 form-packet__item" id="phone">
+											<input type="tel" data-validate data-required required name="phone" data-error="Номер телефону не вірний" placeholder="Phone number" class="tel h6 form-packet__item" id="name">
+											<input type="email" data-validate data-required required name="mail" data-error="Номер телефону не вірний" placeholder="E-mail" class="email h6 form-packet__item" id="mail">
+											<input type="text" data-validate data-required required name="code" data-error="Номер телефону не вірний" placeholder="Promocode" class="code h6 form-packet__item" id="code">
+											<button type="submit" class="content-more__button">
+												<span class="snone h3">send</span>
+											</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="popup-packet-two" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content form-width">
+					<button data-close type="button" class="popup__close">
+						<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="1" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path opacity="1" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<div class="popup__text">
+						<div class="popup__packet packet-popup">
+							<h2 class="packet-popup__title h2">Two-day offline course (3-4 April)</h2>
+							<div class="packet-popup__content">
+								<div class="packet-popup__lists lists-packet">
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Exclusive presentations from leading speakers.</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Professional photos and marketing materials <br class="mob-none"> for participants.</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Certificate of completion of in-depth training.</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Special VIP package for newcomers.</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Practical day with cadaver training (3rd day).</p>
+									</li>
+									<li class="lists-packet__list">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Joint lunch with speakers for <br class="pc-none"> networking.</p>
+									</li>
+									<li class="lists-packet__list">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Accelerated registration for three-day participants.</p>
+									</li>
+									<li class="lists-packet__list">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Reserved parking space is provided.</p>
+									</li>
+									<li class="lists-packet__list">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Personalised concierge service.</p>
+									</li>
+								</div>
+								<div class="packet-popup__form form-packet">
+									<div class="form-packet__title h3">registration</div>
+									<form action="files/sendmail/webhoock.php" id="formone" class="popup__form form-popup" method="POST">
+										<div class="form-questions__body">
+											<input type="hidden" id="utm_source" name="utm_source">
+											<input type="hidden" id="utm_medium" name="utm_medium">
+											<input type="hidden" id="utm_campaign" name="utm_campaign">
+											<input type="hidden" id="utm_content" name="utm_content">
+											<input type="hidden" id="utm_term" name="utm_term">
+											<input type="text" data-validate data-required required name="email" data-error="Ім’я не вірне" placeholder="Name*" class="name h6 form-packet__item" id="phone">
+											<input type="tel" data-validate data-required required name="phone" data-error="Номер телефону не вірний" placeholder="Phone number" class="tel h6 form-packet__item" id="name">
+											<input type="email" data-validate data-required required name="mail" data-error="Номер телефону не вірний" placeholder="E-mail" class="email h6 form-packet__item" id="mail">
+											<input type="text" data-validate data-required required name="code" data-error="Номер телефону не вірний" placeholder="Promocode" class="code h6 form-packet__item" id="code">
+											<button type="submit" class="content-more__button">
+												<span class="snone h3">send</span>
+											</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="popup-packet-three" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content form-width">
+					<button data-close type="button" class="popup__close">
+						<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="1" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path opacity="1" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<div class="popup__text">
+						<div class="popup__packet packet-popup">
+							<h2 class="packet-popup__title h2">three-day course (3-5 April)</h2>
+							<div class="packet-popup__content">
+								<div class="packet-popup__lists lists-packet">
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Exclusive presentations from leading speakers.</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Professional photos and marketing materials <br class="mob-none"> for participants.</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Certificate of completion of in-depth training.</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Special VIP package for newcomers.</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Practical day with cadaver training (3rd day).</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Joint lunch with speakers for <br class="pc-none"> networking.</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Accelerated registration for three-day participants.</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Reserved parking space is provided.</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">Personalised concierge service.</p>
+									</li>
+								</div>
+								<div class="packet-popup__form form-packet">
+									<div class="form-packet__title h3">registration</div>
+									<form action="files/sendmail/webhoock.php" id="formone" class="popup__form form-popup" method="POST">
+										<div class="form-questions__body">
+											<input type="hidden" id="utm_source" name="utm_source">
+											<input type="hidden" id="utm_medium" name="utm_medium">
+											<input type="hidden" id="utm_campaign" name="utm_campaign">
+											<input type="hidden" id="utm_content" name="utm_content">
+											<input type="hidden" id="utm_term" name="utm_term">
+											<input type="text" data-validate data-required required name="email" data-error="Ім’я не вірне" placeholder="Name*" class="name h6 form-packet__item" id="phone">
+											<input type="tel" data-validate data-required required name="phone" data-error="Номер телефону не вірний" placeholder="Phone number" class="tel h6 form-packet__item" id="name">
+											<input type="email" data-validate data-required required name="mail" data-error="Номер телефону не вірний" placeholder="E-mail" class="email h6 form-packet__item" id="mail">
+											<input type="text" data-validate data-required required name="code" data-error="Номер телефону не вірний" placeholder="Promocode" class="code h6 form-packet__item" id="code">
+											<button type="submit" class="content-more__button">
+												<span class="snone h3">send</span>
+											</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- programs day -->
+
+		<div id="popup-day-one" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content without-padding">
+					<button data-close type="button" class="popup__close">
+						<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="1" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path opacity="1" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<div class="popup__text">
+						<img class="program-day" src="img/program/Day1.webp" alt="Image">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="popup-day-two" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content without-padding">
+					<button data-close type="button" class="popup__close">
+						<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="1" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path opacity="1" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<div class="popup__text">
+						<img class="program-day" src="img/program/Day2.webp" alt="Image">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="popup-day-three" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content without-padding">
+					<button data-close type="button" class="popup__close">
+						<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="1" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path opacity="1" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<div class="popup__text">
+						<img class="program-day" src="img/program/Day3.webp" alt="Image">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- programs day end -->
+
+		<!-- speakers -->
+
+		<div id="popup-pasha" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close">
+						<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="1" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path opacity="1" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<div class="popup__text">
+						<div class="popup__info info-popup">
+							<img src="img/popup/1.webp" alt="" class="info-popup__image">
+							<div class="info-popup__text text-popup">
+								<h4 class="text-popup__title h4">Dr. Mesut Pasha</h4>
+								<p class="text-popup__description h6">
+									Dr. Mesut Pasha is the Head of Otorhinolaryngology at
+									Kantonsspital Baselland, specializing in both aesthetic
+									and functional rhinoplasty, including preservation,
+									structural, and revision procedures using Piezo technology.
+									Renowned for his expertise, he utilizes advanced, minimally
+									invasive techniques to improve precision and recovery. <br class="pc-none"> Dr.
+									Pasha is committed to delivering personalized, high-quality
+									results for<br class="pc-none"> his patients, ensuring optimal outcomes<br class="pc-none"> in every
+									case.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="popup-fazil" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close">
+						<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="1" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path opacity="1" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<div class="popup__text">
+						<div class="popup__info info-popup">
+							<img src="img/popup/2.webp" alt="" class="info-popup__image">
+							<div class="info-popup__text text-popup">
+								<h4 class="text-popup__title h4">Dr. Fazıl Apaydın</h4>
+								<p class="text-popup__description h6">
+									Prof. Dr. Dr. Fazıl Apaydın, a renowned facial plastic surgeon,
+									is a professor at<br class="pc-none"> the Department of Otorhinolaryngology<br class="pc-none"> at Ege
+									University, Turkey. Leading<br class="pc-none"> the Division of Facial Plastic
+									Surgery since 1999, he is European board certified<br class="pc-none"> and <br class="mob-none"> has
+									served as the past president<br class="pc-none"> of the European Academy of Facial
+									Plastic Surgery. With over 24 years of global experience in
+									teaching, lecturing,<br class="pc-none"> and performing surgeries, Prof. Apaydin also
+									holds key positions in multiple international organizations and has
+									contributed extensively<br class="mob-none"> to academic literature in the field.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="popup-can" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close">
+						<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="1" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path opacity="1" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<div class="popup__text">
+						<div class="popup__info info-popup">
+							<img src="img/popup/3.webp" alt="" class="info-popup__image">
+							<div class="info-popup__text text-popup">
+								<h4 class="text-popup__title h4">Prof. Dr. med. Can Cedidi</h4>
+								<p class="text-popup__description h6">
+									As the Chief of Plastic, Reconstructive,<br class="pc-none"> and Aesthetic
+									Surgery in one of Germany's largest hospitals, and a
+									Professor at the University of Göttingen and Witten/<br class="pc-none">Herdecke,
+									brings unmatched expertise.<br class="pc-none"> His training spans top institutions
+									like Heidelberg University, Hannover Medical School, and The Mayo Clinic.
+									His expertise in microsurgical reconstruction<br class="pc-none"> is renowned globally. Prof.
+									Dr. med. Can Cedidi <br class="mob-none"> is the visionary behind the renowned SOAP Congress,
+									showcasing<br class="pc-none"> the world’s top plastic surgeons and cutting-edge techniques.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="popup-timur" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close">
+						<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="1" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path opacity="1" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<div class="popup__text">
+						<div class="popup__info info-popup">
+							<img src="img/popup/4.webp" alt="" class="info-popup__image">
+							<div class="info-popup__text text-popup">
+								<h4 class="text-popup__title h4">Dr. med. Timur Taskesen</h4>
+								<p class="text-popup__description h6">
+									As a dermatologist and dermatosurgeon <br> in Zurich,
+									Dr Timur Taskesen brings<br class="pc-none"> a unique perspective to
+									rhinoplasty, enhancing <br class="mob-none"> outcomes through advanced skin
+									treatments.<br class="mob-none"> By optimizing skin quality and managing
+									scarring with laser therapy and bioregenerative techniques,
+									he helps ENT and plastic surgeons achieve more refined,
+									natural-looking results. Timur Taskesen will share how
+									dermatology<br class="mob-none"> can add value to rhinoplasty, from pre-surgery
+									skin prep to post-op recovery.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="popup-amin" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close">
+						<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="1" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path opacity="1" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<div class="popup__text">
+						<div class="popup__info info-popup">
+							<img src="img/popup/5.webp" alt="" class="info-popup__image">
+							<div class="info-popup__text text-popup">
+								<h4 class="text-popup__title h4">Prof. Dr. med. Mohamed Amin</h4>
+								<p class="text-popup__description h6">
+									An Associate Professor at University College Dublin
+									and Consultant Otolaryngologist at<br class="mob-none"> Mater Misericordiae
+									University Hospital, Dublin, Dr. Amin<br class="pc-none"> brings a wealth of
+									expertise in sinus disease and septorhinoplasty surgery.<br class="pc-none">
+									With fellowship training in London and active roles<br class="mob-none"> in the
+									European Rhinologic Society and<br class="mob-none"> European Academy of Facial
+									Plastic Surgery,<br class="mob-none"> he's a recognized leader<br class="pc-none"> in his field.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="popup-antonio" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close">
+						<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="1" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path opacity="1" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<div class="popup__text">
+						<div class="popup__info info-popup">
+							<img src="img/popup/6.webp" alt="" class="info-popup__image">
+							<div class="info-popup__text text-popup">
+								<h4 class="text-popup__title h4">Dr. Antonio Sousa Vieira</h4>
+								<p class="text-popup__description h6">
+									António Sousa Vieira, an otorhinolaryngologist since 1990,
+									specializes in rhinology, focusing<br> on functional
+									and aesthetic nose treatments.<br class="mob-none"> A frequent international
+									speaker and author<br class="mob-none"> of several articles,<br class="pc-none"> he promotes
+									customized rhinoplasty<br class="pc-none"> to enhance patients' quality of life.<br class="mob-none">
+									His expertise combines artistic precision with advanced surgical
+									techniques, refining<br class="mob-none"> thousands of cases.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- speakers end -->
 	</div>
-	<script src="js/app.min.js?_v=20241110120022"></script>
+	<script src="js/app.min.js?_v=20241110151457"></script>
 </body>
 
 </html>
