@@ -4332,6 +4332,7 @@
         const menuLinks = document.querySelectorAll(".menu__link");
         const actionBtn = document.querySelector(".actions-header__btn");
         const communityBtn = document.querySelector(".community__title");
+        const discoverTitle = document.querySelector(".left-discover__title-de");
         if (window.innerWidth < 768) {
             menuLinks.forEach((link => {
                 link.classList.remove("h6");
@@ -4341,6 +4342,10 @@
             actionBtn.classList.add("h3");
             communityBtn.classList.add("h3");
             communityBtn.classList.remove("h2");
+            if (discoverTitle) {
+                discoverTitle.classList.add("h2");
+                discoverTitle.classList.remove("h3");
+            }
         } else {
             menuLinks.forEach((link => {
                 link.classList.remove("h2");
@@ -4350,6 +4355,10 @@
             actionBtn.classList.add("h5");
             communityBtn.classList.remove("h3");
             communityBtn.classList.add("h2");
+            if (discoverTitle) {
+                discoverTitle.classList.add("h3");
+                discoverTitle.classList.remove("h2");
+            }
         }
     }
     updateMenuClass();
