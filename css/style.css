@@ -318,9 +318,9 @@ body::after {
   width: 90px;
   height: 93px;
   flex-shrink: 0;
-  fill: rgba(21,150,195,.01);
+  background: rgba(21,150,195,.01);
   stroke-width: .494px;
-  stroke: var(--blue-30,rgba(21,150,195,.3));
+  stroke: rgba(21,150,195,.3);
   box-shadow: 0 0 6.92px 0 rgba(58,189,233,.6) inset;
   -webkit-filter: blur(.9885966778px);
   filter: blur(.9885966778px);
@@ -331,7 +331,7 @@ body::after {
   width: 102px;
   height: 102px;
   flex-shrink: 0;
-  background: var(--blue-60,rgba(21,150,195,.6));
+  background: rgba(21,150,195,.6);
   -webkit-filter: blur(56.6101722717px);
   filter: blur(56.6101722717px);
   top: 35px;
@@ -349,9 +349,9 @@ body::after {
   width: 118px;
   height: 122px;
   flex-shrink: 0;
-  fill: rgba(21,150,195,.01);
+  background: rgba(21,150,195,.01);
   stroke-width: .649px;
-  stroke: var(--blue-30,rgba(21,150,195,.3));
+  stroke: rgba(21,150,195,.3);
   box-shadow: 0 0 9.089px 0 rgba(58,189,233,.6) inset;
   -webkit-filter: blur(1.2983742952px);
   filter: blur(1.2983742952px);
@@ -362,7 +362,7 @@ body::after {
   width: 102px;
   height: 102px;
   flex-shrink: 0;
-  background: var(--blue-60,rgba(21,150,195,.6));
+  background: rgba(21,150,195,.6);
   -webkit-filter: blur(56.6101722717px);
   filter: blur(56.6101722717px);
   top: 81px;
@@ -380,9 +380,9 @@ body::after {
   width: 145px;
   height: 150px;
   flex-shrink: 0;
-  fill: rgba(21,150,195,.01);
+  background: rgba(21,150,195,.01);
   stroke-width: .802px;
-  stroke: var(--blue-30,rgba(21,150,195,.3));
+  stroke: rgba(21,150,195,.3);
   box-shadow: 0 0 11.225px 0 rgba(58,189,233,.6) inset;
   -webkit-filter: blur(1.6035958529px);
   filter: blur(1.6035958529px);
@@ -399,9 +399,9 @@ body::after {
   width: 77.22px;
   height: 80.188px;
   flex-shrink: 0;
-  fill: rgba(21,150,195,.01);
+  background: rgba(21,150,195,.01);
   stroke-width: .427px;
-  stroke: var(--blue-30,rgba(21,150,195,.3));
+  stroke: rgba(21,150,195,.3);
   box-shadow: 0 0 5.974px 0 rgba(58,189,233,.6) inset;
   -webkit-filter: blur(.8533927202px);
   filter: blur(.8533927202px);
@@ -418,9 +418,9 @@ body::after {
   width: 31.663px;
   height: 32.879px;
   flex-shrink: 0;
-  fill: rgba(21,150,195,.01);
+  background: rgba(21,150,195,.01);
   stroke-width: .175px;
-  stroke: var(--blue-30,rgba(21,150,195,.3));
+  stroke: rgba(21,150,195,.3);
   box-shadow: 0 0 2.449px 0 rgba(58,189,233,.6) inset;
   -webkit-filter: blur(.3499171138px);
   filter: blur(.3499171138px);
@@ -437,7 +437,7 @@ body::after {
   width: 166.874px;
   height: 167px;
   flex-shrink: 0;
-  background: var(--blue-60,rgba(21,150,195,.6));
+  background: rgba(21,150,195,.6);
   -webkit-filter: blur(56.6101722717px);
   filter: blur(56.6101722717px);
   border-radius: 50%
@@ -894,7 +894,7 @@ body {
   width: 180.973px;
   height: 187.927px;
   flex-shrink: 0;
-  fill: rgba(21,150,195,.01);
+  background: rgba(21,150,195,.01);
   stroke-width: 1px;
   stroke: rgba(21,150,195,.3);
   box-shadow: 0 0 14px 0 rgba(58,189,233,.6) inset;
@@ -910,7 +910,7 @@ body {
   width: 78.935px;
   height: 81.968px;
   flex-shrink: 0;
-  fill: rgba(21,150,195,.01);
+  background: rgba(21,150,195,.01);
   stroke-width: .436px;
   stroke: rgba(21,150,195,.3);
   box-shadow: 0 0 6.106px 0 rgba(58,189,233,.6) inset;
@@ -938,7 +938,7 @@ body {
   width: 220.967px;
   height: 229.458px;
   flex-shrink: 0;
-  fill: rgba(21,150,195,.01);
+  background: rgba(21,150,195,.01);
   stroke-width: 1.221px;
   stroke: rgba(21,150,195,.3);
   box-shadow: 0 0 17.094px 0 rgba(58,189,233,.6) inset;
@@ -954,7 +954,7 @@ body {
   width: 201.188px;
   height: 208.919px;
   flex-shrink: 0;
-  fill: rgba(21,150,195,.01);
+  background: rgba(21,150,195,.01);
   stroke-width: 1.112px;
   stroke: rgba(21,150,195,.3);
   box-shadow: 0 0 15.564px 0 rgba(58,189,233,.6) inset;
@@ -983,7 +983,7 @@ body {
   width: 149.733px;
   height: 155.487px;
   flex-shrink: 0;
-  fill: rgba(21,150,195,.01);
+  background: rgba(21,150,195,.01);
   stroke-width: .827px;
   stroke: rgba(21,150,195,.3);
   box-shadow: 0 0 11.583px 0 rgba(58,189,233,.6) inset;
@@ -1517,7 +1517,7 @@ body {
   position: absolute;
   width: 180.973px;
   height: 187.927px;
-  fill: rgba(21,150,195,.01);
+  background: rgba(21,150,195,.01);
   stroke-width: 1px;
   stroke: rgba(21,150,195,.3);
   box-shadow: 0 0 14px 0 rgba(58,189,233,.6) inset;
@@ -1536,7 +1536,7 @@ body {
   width: 220.967px;
   height: 229.458px;
   flex-shrink: 0;
-  fill: rgba(21,150,195,.01);
+  background: rgba(21,150,195,.01);
   stroke-width: 1.221px;
   stroke: rgba(21,150,195,.3);
   box-shadow: 0 0 17.094px 0 rgba(58,189,233,.6) inset;
@@ -1552,7 +1552,7 @@ body {
   width: 149.733px;
   height: 155.487px;
   flex-shrink: 0;
-  fill: rgba(21,150,195,.01);
+  background: rgba(21,150,195,.01);
   stroke-width: .827px;
   stroke: rgba(21,150,195,.3);
   box-shadow: 0 0 11.583px 0 rgba(58,189,233,.6) inset;
@@ -1568,7 +1568,7 @@ body {
   width: 201.188px;
   height: 208.919px;
   flex-shrink: 0;
-  fill: rgba(21,150,195,.01);
+  background: rgba(21,150,195,.01);
   stroke-width: 1.112px;
   stroke: rgba(21,150,195,.3);
   box-shadow: 0 0 15.564px 0 rgba(58,189,233,.6) inset;
@@ -1958,7 +1958,7 @@ body {
     width: 166.874px;
     height: 167px;
     bottom: 0;
-    fill: rgba(21,150,195,.6);
+    background: rgba(21,150,195,.6);
     -webkit-filter: blur(56.6101722717px);
     filter: blur(56.6101722717px)
   }
@@ -2129,7 +2129,7 @@ body {
     height: 167px;
     left: -84%;
     top: -85%;
-    fill: rgba(21,150,195,.6);
+    background: rgba(21,150,195,.6);
     -webkit-filter: blur(56.6101722717px);
     filter: blur(56.6101722717px)
   }
@@ -2176,7 +2176,7 @@ body {
     height: 156px;
     top: -10px;
     left: -50px;
-    fill: #1596c3;
+    background: #1596c3;
     stroke-width: .532px;
     stroke: #1596c3;
     opacity: .8;
@@ -2193,7 +2193,7 @@ body {
   .inspiring__cirle-two {
     width: 141px;
     height: 106px;
-    fill: #1596c3;
+    background: #1596c3;
     stroke-width: .369px;
     stroke: #1596c3;
     opacity: .8;
@@ -2205,7 +2205,7 @@ body {
   .inspiring__cirle-three {
     width: 180px;
     height: 136px;
-    fill: #1596c3;
+    background: #1596c3;
     stroke-width: .471px;
     stroke: #1596c3;
     opacity: .8;
@@ -2241,7 +2241,7 @@ body {
   .discover__cirle {
     width: 141px;
     height: 166px;
-    fill: #1596c3;
+    background: #1596c3;
     stroke-width: .563px;
     stroke: #1596c3;
     opacity: .6;
@@ -2290,7 +2290,7 @@ body {
     left: 170px;
     width: 210px;
     height: 210px;
-    fill: #1596c3;
+    background: #1596c3;
     stroke-width: .712px;
     stroke: #1596c3;
     opacity: .7;
@@ -2314,7 +2314,7 @@ body {
   .content-community__cirle-one {
     width: 143px;
     height: 143px;
-    fill: #1596c3;
+    background: #1596c3;
     stroke-width: .485px;
     stroke: #1596c3;
     opacity: .7;
@@ -2332,7 +2332,7 @@ body {
   .content-community__cirle-two {
     width: 165px;
     height: 165px;
-    fill: #1596c3;
+    background: #1596c3;
     stroke-width: .559px;
     stroke: #1596c3;
     opacity: .7;
@@ -2376,7 +2376,7 @@ body {
   .sponsors__cilre-one {
     width: 74px;
     height: 109px;
-    fill: #1596c3;
+    background: #1596c3;
     stroke-width: .443px;
     stroke: #1596c3;
     opacity: .7;
@@ -2396,7 +2396,7 @@ body {
     right: -20px;
     width: 128px;
     height: 128px;
-    fill: #1596c3;
+    background: #1596c3;
     stroke-width: .52px;
     stroke: #1596c3;
     opacity: .7;
@@ -2463,7 +2463,7 @@ body {
   .register__cirle-one {
     width: 118px;
     height: 122px;
-    fill: rgba(21,150,195,.01);
+    background: rgba(21,150,195,.01);
     stroke-width: .649px;
     stroke: rgba(21,150,195,.3);
     box-shadow: 0 0 9.089px 0 rgba(58,189,233,.6) inset;
@@ -2476,7 +2476,7 @@ body {
   .register__cirle-two {
     width: 145px;
     height: 150px;
-    fill: rgba(21,150,195,.01);
+    background: rgba(21,150,195,.01);
     stroke-width: .802px;
     stroke: rgba(21,150,195,.3);
     box-shadow: 0 0 11.225px 0 rgba(58,189,233,.6) inset;
@@ -2488,7 +2488,7 @@ body {
   .register__cirle-three {
     width: 77.22px;
     height: 80.188px;
-    fill: rgba(21,150,195,.01);
+    background: rgba(21,150,195,.01);
     stroke-width: .427px;
     stroke: rgba(21,150,195,.3);
     box-shadow: 0 0 5.974px 0 rgba(58,189,233,.6) inset;
