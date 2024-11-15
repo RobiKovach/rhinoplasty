@@ -3117,7 +3117,7 @@
         classes
     };
     const extendedDefaults = {};
-    class swiper_core_Swiper {
+    class Swiper {
         constructor() {
             let el;
             let params;
@@ -3133,7 +3133,7 @@
                     const newParams = utils_extend({}, params, {
                         el: containerEl
                     });
-                    swipers.push(new swiper_core_Swiper(newParams));
+                    swipers.push(new Swiper(newParams));
                 }));
                 return swipers;
             }
@@ -3505,25 +3505,25 @@
             return defaults;
         }
         static installModule(mod) {
-            if (!swiper_core_Swiper.prototype.__modules__) swiper_core_Swiper.prototype.__modules__ = [];
-            const modules = swiper_core_Swiper.prototype.__modules__;
+            if (!Swiper.prototype.__modules__) Swiper.prototype.__modules__ = [];
+            const modules = Swiper.prototype.__modules__;
             if (typeof mod === "function" && modules.indexOf(mod) < 0) modules.push(mod);
         }
         static use(module) {
             if (Array.isArray(module)) {
-                module.forEach((m => swiper_core_Swiper.installModule(m)));
-                return swiper_core_Swiper;
+                module.forEach((m => Swiper.installModule(m)));
+                return Swiper;
             }
-            swiper_core_Swiper.installModule(module);
-            return swiper_core_Swiper;
+            Swiper.installModule(module);
+            return Swiper;
         }
     }
     Object.keys(prototypes).forEach((prototypeGroup => {
         Object.keys(prototypes[prototypeGroup]).forEach((protoMethod => {
-            swiper_core_Swiper.prototype[protoMethod] = prototypes[prototypeGroup][protoMethod];
+            Swiper.prototype[protoMethod] = prototypes[prototypeGroup][protoMethod];
         }));
     }));
-    swiper_core_Swiper.use([ Resize, Observer ]);
+    Swiper.use([ Resize, Observer ]);
     function create_element_if_not_defined_createElementIfNotDefined(swiper, originalParams, params, checkProps) {
         if (swiper.params.createElements) Object.keys(checkProps).forEach((key => {
             if (!params[key] && params.auto === true) {
@@ -3944,28 +3944,19 @@
             resume
         });
     }
-    const scrollbar = document.querySelector(".speaker-scrollbar");
-    const thumb = document.createElement("div");
-    thumb.classList.add("speaker-scrollbar-thumb");
-    scrollbar.appendChild(thumb);
     function initSliders() {
         if (document.querySelector(".swiper")) {
-            const swiper = new swiper_core_Swiper(".speakers__slider", {
+            new Swiper(".speakers__slider", {
                 modules: [ Navigation ],
                 observer: true,
                 observeParents: true,
-                slidesPerView: 5,
-                spaceBetween: 0,
                 autoHeight: false,
                 speed: 800,
-                scrollbar: {
-                    el: ".speaker-scrollbar",
-                    draggable: true
-                },
-                navigation: {
-                    prevEl: ".swiper-button-prev",
-                    nextEl: ".swiper-button-next"
-                },
+                freeMode: true,
+                slidesPerView: "auto",
+                freeModeMomentum: true,
+                freeModeMomentumVelocityRatio: 1.5,
+                lazy: true,
                 breakpoints: {
                     360: {
                         slidesPerView: 2.2,
@@ -3984,20 +3975,13 @@
                         spaceBetween: 20
                     },
                     1268: {
-                        slidesPerView: 5,
-                        spaceBetween: 30
+                        slidesPerView: 5.4,
+                        spaceBetween: 15
                     }
                 },
-                on: {
-                    slideChange: function() {
-                        updateScrollbar();
-                    },
-                    resize: function() {
-                        updateScrollbar();
-                    }
-                }
+                on: {}
             });
-            new swiper_core_Swiper(".gallery__slider", {
+            new Swiper(".gallery__slider", {
                 modules: [ Navigation, Autoplay ],
                 observer: true,
                 observeParents: true,
@@ -4039,16 +4023,6 @@
                 },
                 on: {}
             });
-            function updateScrollbar() {
-                const totalSlides = swiper.slides.length;
-                const visibleSlides = swiper.params.slidesPerView === "auto" ? 1 : swiper.params.slidesPerView;
-                const currentSlide = swiper.activeIndex;
-                const thumbWidth = visibleSlides / totalSlides * 100;
-                const progress = currentSlide / (totalSlides - visibleSlides) * 100;
-                thumb.style.width = `${thumbWidth}%`;
-                thumb.style.transform = `translateX(${progress}%)`;
-            }
-            updateScrollbar();
         }
     }
     window.addEventListener("load", (function(e) {
@@ -4338,10 +4312,14 @@
                 link.classList.remove("h6");
                 link.classList.add("h2");
             }));
-            actionBtn.classList.remove("h5");
-            actionBtn.classList.add("h3");
-            communityBtn.classList.add("h3");
-            communityBtn.classList.remove("h2");
+            if (communityBtn) {
+                communityBtn.classList.add("h3");
+                communityBtn.classList.remove("h2");
+            }
+            if (actionBtn) {
+                actionBtn.classList.remove("h5");
+                actionBtn.classList.add("h3");
+            }
             if (discoverTitle) {
                 discoverTitle.classList.add("h2");
                 discoverTitle.classList.remove("h3");
@@ -4351,10 +4329,14 @@
                 link.classList.remove("h2");
                 link.classList.add("h6");
             }));
-            actionBtn.classList.remove("h3");
-            actionBtn.classList.add("h5");
-            communityBtn.classList.remove("h3");
-            communityBtn.classList.add("h2");
+            if (actionBtn) {
+                actionBtn.classList.remove("h3");
+                actionBtn.classList.add("h5");
+            }
+            if (communityBtn) {
+                communityBtn.classList.remove("h3");
+                communityBtn.classList.add("h2");
+            }
             if (discoverTitle) {
                 discoverTitle.classList.add("h3");
                 discoverTitle.classList.remove("h2");
@@ -4364,6 +4346,11 @@
     updateMenuClass();
     window.addEventListener("resize", updateMenuClass);
     function countdown(endDate) {
+        const timerElement = document.querySelector(".timer");
+        if (!timerElement) {
+            console.log("Елемент з класом 'timer' не знайдено на сторінці.");
+            return;
+        }
         let days, hours, minutes, seconds;
         endDate = new Date(endDate).getTime();
         if (isNaN(endDate)) return;
@@ -4415,6 +4402,86 @@
             input.addEventListener("focus", mask, false);
             input.addEventListener("blur", mask, false);
             input.addEventListener("keydown", mask, false);
+        }));
+    }));
+    document.querySelectorAll(".item-sponsors__descriptions").forEach(((el, index) => {
+        el.addEventListener("click", (e => {
+            e.preventDefault();
+            showPopup(index);
+        }));
+    }));
+    const popups = document.querySelectorAll(".popup-sponsors");
+    let currentPopupIndex = 0;
+    function showPopup(index) {
+        popups.forEach((popup => popup.classList.remove("popup_show")));
+        popups[index].classList.add("popup_show");
+        currentPopupIndex = index;
+    }
+    document.querySelectorAll(".prev-popup").forEach((btn => {
+        btn.addEventListener("click", (() => {
+            if (currentPopupIndex > 0) showPopup(currentPopupIndex - 1);
+        }));
+    }));
+    document.querySelectorAll(".next-popup").forEach((btn => {
+        btn.addEventListener("click", (() => {
+            if (currentPopupIndex < popups.length - 1) showPopup(currentPopupIndex + 1);
+        }));
+    }));
+    document.querySelectorAll(".popup__close").forEach((btn => {
+        btn.addEventListener("click", (() => {
+            popups.forEach((popup => popup.classList.remove("popup_show")));
+        }));
+    }));
+    document.addEventListener("keydown", (e => {
+        if (e.key === "Escape") popups.forEach((popup => popup.classList.remove("popup_show")));
+    }));
+    popups.forEach((popup => {
+        const mc = new Hammer(popup);
+        mc.on("swipeleft", (() => {
+            if (currentPopupIndex < popups.length - 1) showPopup(currentPopupIndex + 1);
+        }));
+        mc.on("swiperight", (() => {
+            if (currentPopupIndex > 0) showPopup(currentPopupIndex - 1);
+        }));
+    }));
+    document.querySelectorAll(".price-btn").forEach(((el, index) => {
+        el.addEventListener("click", (e => {
+            e.preventDefault();
+            showPopup2(index);
+        }));
+    }));
+    const popups2 = document.querySelectorAll(".popup-packet");
+    let currentPopupIndex2 = 0;
+    function showPopup2(index) {
+        popups2.forEach((popup => popup.classList.remove("popup_show")));
+        popups2[index].classList.add("popup_show");
+        currentPopupIndex2 = index;
+    }
+    document.querySelectorAll(".prev-popup-packet").forEach((btn => {
+        btn.addEventListener("click", (() => {
+            if (currentPopupIndex2 > 0) showPopup2(currentPopupIndex2 - 1);
+        }));
+    }));
+    document.querySelectorAll(".next-popup-packet").forEach((btn => {
+        btn.addEventListener("click", (() => {
+            if (currentPopupIndex2 < popups2.length - 1) showPopup2(currentPopupIndex2 + 1);
+        }));
+    }));
+    document.querySelectorAll(".popup__close").forEach((btn => {
+        btn.addEventListener("click", (() => {
+            popups2.forEach((popup => popup.classList.remove("popup_show")));
+        }));
+    }));
+    document.addEventListener("keydown", (e => {
+        if (e.key === "Escape") popups2.forEach((popup => popup.classList.remove("popup_show")));
+    }));
+    popups2.forEach((popup => {
+        const mc = new Hammer(popup);
+        mc.on("swipeleft", (() => {
+            if (currentPopupIndex2 < popups2.length - 1) showPopup2(currentPopupIndex2 + 1);
+        }));
+        mc.on("swiperight", (() => {
+            if (currentPopupIndex2 > 0) showPopup2(currentPopupIndex2 - 1);
         }));
     }));
     window["FLS"] = true;

@@ -2,14 +2,16 @@
 <html lang="en">
 
 <head>
-	<title>HomePage</title>
+	<title>Rhinoplasty</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20241113134612">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241115081849">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js?_v=20241115081849"></script>
+
 </head>
 
 <body>
@@ -166,7 +168,7 @@
 						</div>
 						<div data-watch data-watch-once data-watch-threshold="0.5" class="content-programme__item item-programe center center-de programme-rotate-left">
 							<div class="item-programe__info">
-								<h4 class="item-programe__title h4">5 April, Aula Feldsäge, Anatomie Uni Basel – Hands-On-Cadaver</h4>
+								<h4 class="item-programe__title h4">5 April, Anatomie Uni Basel – Hands-On-Cadaver</h4>
 								<p class="item-programe__description h6">
 									Ein von internationalen Experten geleitetes Praxisseminar
 									einschliesslich die Anwendung von Piezo am Kadaver.
@@ -310,8 +312,6 @@
 								</a>
 							</div>
 						</div>
-						<!-- Якщо потрібен скролбар -->
-						<div class="swiper-scrollbar speaker-scrollbar"></div>
 					</div>
 					<span class="speaker__circle-one"></span>
 					<span class="speaker__circle-two"></span>
@@ -371,7 +371,7 @@
 							</div>
 							<p class="item-programe__price h4">900 CHF</p>
 
-							<a href="#" data-popup="#popup-packet-one" class="item-programe__btn">
+							<a href="#" data-popup="#popup-packet-one" class="item-programe__btn price-btn">
 								<img src="img/icon-programme.svg" alt="" class="item-programe__icon">
 								<p class="item-programe__btntext h6">Jetzt buchen</p>
 							</a>
@@ -384,7 +384,7 @@
 								</p>
 							</div>
 							<p class="item-programe__price h4">1500 CHF</p>
-							<a href="#" data-popup="#popup-packet-two" class="item-programe__btn">
+							<a href="#" data-popup="#popup-packet-two" class="item-programe__btn price-btn">
 								<img src="img/icon-programme.svg" alt="" class="item-programe__icon">
 								<p class="item-programe__btntext h6">Jetzt buchen</p>
 							</a>
@@ -398,7 +398,7 @@
 							</div>
 							<p class="item-programe__price h4">2000 CHF</p>
 
-							<a href="#" data-popup="#popup-packet-three" class="item-programe__btn">
+							<a href="#" data-popup="#popup-packet-three" class="item-programe__btn price-btn">
 								<img src="img/icon-programme.svg" alt="" class="item-programe__icon">
 								<p class="item-programe__btntext h6">Jetzt buchen</p>
 							</a>
@@ -442,7 +442,36 @@
 							MÖCHTEN SIE SICH <span class="blue">ODER IHR UNTERNEHMEN <br class="pc-none"> AUF DEM</span> GIPFEL PRÄSENTIEREN?
 						</h2>
 						<p class="info-sponsors__description h5">Wählen Sie ein für Sie passendes Partnerschaftspaket</p>
-						<a href="#" class="info-sponsors__btn button h3">Werden Sie Sponsor</a>
+						<div class="info-sponsors__items">
+							<div class="info-sponsors__item item-sponsors">
+								<h3 class="item-sponsors__title h3">bronze</h3>
+								<a href="#" data-popup="#popup-sponsors-one" class="item-sponsors__descriptions">
+									<img src="img/icon-programme.svg" alt="Image">
+									<span class="h5">Details</span>
+								</a>
+							</div>
+							<div class="info-sponsors__item item-sponsors">
+								<h3 class="item-sponsors__title h3">silber</h3>
+								<a href="#" data-popup="#popup-sponsors-two" class="item-sponsors__descriptions">
+									<img src="img/icon-programme.svg" alt="Image">
+									<span class="h5">Details</span>
+								</a>
+							</div>
+							<div class="info-sponsors__item item-sponsors">
+								<h3 class="item-sponsors__title h3">gold</h3>
+								<a href="#" data-popup="#popup-sponsors-three" class="item-sponsors__descriptions">
+									<img src="img/icon-programme.svg" alt="Image">
+									<span class="h5">Details</span>
+								</a>
+							</div>
+							<div class="info-sponsors__item item-sponsors">
+								<h3 class="item-sponsors__title h3">Platin</h3>
+								<a href="#" data-popup="#popup-sponsors-four" class="item-sponsors__descriptions">
+									<img src="img/icon-programme.svg" alt="Image">
+									<span class="h5">Details</span>
+								</a>
+							</div>
+						</div>
 						<img class="sponsors__puls" src="img/puls-without-blur.webp" alt="Image">
 					</div>
 				</div>
@@ -512,7 +541,7 @@
 				<a href="https://www.mriya-digital.com/" class="footer__bottom bottom-footer h6">Hergestellt bei MRiYA AGENCY.</a>
 			</div>
 		</footer>
-		<div id="popup-packet-one" aria-hidden="true" class="popup">
+		<div id="popup-packet-one" aria-hidden="true" class="popup popup-packet">
 			<div class="popup__wrapper">
 				<div class="popup__content form-width">
 					<button data-close type="button" class="popup__close">
@@ -520,6 +549,12 @@
 							<path opacity="1" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
 							<path opacity="1" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
 						</svg>
+					</button>
+					<button class="prev-popup-packet">
+						<img src="img/arrow.webp" alt="Image">
+					</button>
+					<button class="next-popup-packet">
+						<img src="img/arrow.webp" alt="Image">
 					</button>
 					<div class="popup__text">
 						<div class="popup__packet packet-popup">
@@ -565,7 +600,7 @@
 								</div>
 								<div class="packet-popup__form form-packet">
 									<div class="form-packet__title h3">Registrierung</div>
-									<form action="files/sendmail/webhoock.php" id="formone" class="popup__form form-popup" method="POST">
+									<form action="files/sendmail/webhoock-de.php" id="formone" class="popup__form form-popup" method="POST">
 										<div class="form-questions__body">
 											<input type="hidden" id="utm_source" name="utm_source">
 											<input type="hidden" id="utm_medium" name="utm_medium">
@@ -575,7 +610,7 @@
 											<input type="text" data-validate data-required required name="email" data-error="Ім’я не вірне" placeholder="Name*" class="name h6 form-packet__item" id="phone">
 											<input type="tel" data-validate data-required required name="phone" data-error="Номер телефону не вірний" placeholder="Telefon-Nummer" class="tel h6 form-packet__item" id="name">
 											<input type="email" data-validate data-required required name="mail" data-error="Номер телефону не вірний" placeholder="E-mail" class="email h6 form-packet__item" id="mail">
-											<input type="text" data-validate data-required required name="code" data-error="Номер телефону не вірний" placeholder="Promocode" class="code h6 form-packet__item" id="code">
+											<input type="text" name="code" data-error="Номер телефону не вірний" placeholder="Promocode" class="code h6 form-packet__item" id="code">
 											<button type="submit" class="content-more__button">
 												<span class="snone h3">senden</span>
 											</button>
@@ -588,7 +623,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="popup-packet-two" aria-hidden="true" class="popup">
+		<div id="popup-packet-two" aria-hidden="true" class="popup popup-packet">
 			<div class="popup__wrapper">
 				<div class="popup__content form-width">
 					<button data-close type="button" class="popup__close">
@@ -596,6 +631,12 @@
 							<path opacity="1" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
 							<path opacity="1" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
 						</svg>
+					</button>
+					<button class="prev-popup-packet">
+						<img src="img/arrow.webp" alt="Image">
+					</button>
+					<button class="next-popup-packet">
+						<img src="img/arrow.webp" alt="Image">
 					</button>
 					<div class="popup__text">
 						<div class="popup__packet packet-popup">
@@ -641,7 +682,7 @@
 								</div>
 								<div class="packet-popup__form form-packet">
 									<div class="form-packet__title h3">Registrierung</div>
-									<form action="files/sendmail/webhoock.php" id="formone" class="popup__form form-popup" method="POST">
+									<form action="files/sendmail/webhoock-de.php" id="formone" class="popup__form form-popup" method="POST">
 										<div class="form-questions__body">
 											<input type="hidden" id="utm_source" name="utm_source">
 											<input type="hidden" id="utm_medium" name="utm_medium">
@@ -651,7 +692,7 @@
 											<input type="text" data-validate data-required required name="email" data-error="Ім’я не вірне" placeholder="Name*" class="name h6 form-packet__item" id="phone">
 											<input type="tel" data-validate data-required required name="phone" data-error="Номер телефону не вірний" placeholder="Telefon-Nummer" class="tel h6 form-packet__item" id="name">
 											<input type="email" data-validate data-required required name="mail" data-error="Номер телефону не вірний" placeholder="E-mail" class="email h6 form-packet__item" id="mail">
-											<input type="text" data-validate data-required required name="code" data-error="Номер телефону не вірний" placeholder="Promocode" class="code h6 form-packet__item" id="code">
+											<input type="text" name="code" data-error="Номер телефону не вірний" placeholder="Promocode" class="code h6 form-packet__item" id="code">
 											<button type="submit" class="content-more__button">
 												<span class="snone h3">senden</span>
 											</button>
@@ -664,7 +705,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="popup-packet-three" aria-hidden="true" class="popup">
+		<div id="popup-packet-three" aria-hidden="true" class="popup popup-packet">
 			<div class="popup__wrapper">
 				<div class="popup__content form-width">
 					<button data-close type="button" class="popup__close">
@@ -672,6 +713,12 @@
 							<path opacity="1" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
 							<path opacity="1" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
 						</svg>
+					</button>
+					<button class="prev-popup-packet">
+						<img src="img/arrow.webp" alt="Image">
+					</button>
+					<button class="next-popup-packet">
+						<img src="img/arrow.webp" alt="Image">
 					</button>
 					<div class="popup__text">
 						<div class="popup__packet packet-popup">
@@ -717,7 +764,7 @@
 								</div>
 								<div class="packet-popup__form form-packet">
 									<div class="form-packet__title h3">Registrierung</div>
-									<form action="files/sendmail/webhoock.php" id="formone" class="popup__form form-popup" method="POST">
+									<form action="files/sendmail/webhoock-de.php" id="formone" class="popup__form form-popup" method="POST">
 										<div class="form-questions__body">
 											<input type="hidden" id="utm_source" name="utm_source">
 											<input type="hidden" id="utm_medium" name="utm_medium">
@@ -727,7 +774,7 @@
 											<input type="text" data-validate data-required required name="email" data-error="Ім’я не вірне" placeholder="Name*" class="name h6 form-packet__item" id="phone">
 											<input type="tel" data-validate data-required required name="phone" data-error="Номер телефону не вірний" placeholder="Telefon-Nummer" class="tel h6 form-packet__item" id="name">
 											<input type="email" data-validate data-required required name="mail" data-error="Номер телефону не вірний" placeholder="E-mail" class="email h6 form-packet__item" id="mail">
-											<input type="text" data-validate data-required required name="code" data-error="Номер телефону не вірний" placeholder="Promocode" class="code h6 form-packet__item" id="code">
+											<input type="text" name="code" data-error="Номер телефону не вірний" placeholder="Promocode" class="code h6 form-packet__item" id="code">
 											<button type="submit" class="content-more__button">
 												<span class="snone h3">senden</span>
 											</button>
@@ -982,8 +1029,323 @@
 		</div>
 
 		<!-- speakers end -->
+
+		<!-- sponsors -->
+		<div id="popup-sponsors-one" aria-hidden="true" class="popup popup-sponsors">
+			<div class="popup__wrapper">
+				<div class="popup__content form-width">
+					<button data-close type="button" class="popup__close">
+						<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="1" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path opacity="1" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<button class="prev-popup">
+						<img src="img/arrow.webp" alt="Image">
+					</button>
+					<button class="next-popup">
+						<img src="img/arrow.webp" alt="Image">
+					</button>
+					<div class="popup__text">
+						<div class="popup__packet packet-popup">
+							<h2 class="packet-popup__title h2">Bronze paket</h2>
+							<div class="packet-popup__content">
+								<div class="packet-popup__lists lists-packet">
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">
+											Platzierung des Standes: Zuweisung<br class="pc-none"> eines Standes auf der<br class="pc-none"> Veranstaltungsfläche
+										</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">
+											Markenpräsenz: Anerkennung als<br class="pc-none"> Bronze-<br class="mob-none">Sponsor im
+											gedruckten und<br class="pc-none"> digitalen Programm
+											sowie<br class="pc-none"> in der mobilen App
+										</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">
+											Präsenz vor Ort: sichtbare Platzierung<br class="pc-none"> des<br class="mob-none"> Logos auf dem Banner.
+										</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">
+											Plätze für die Teilnahme: Ein kostenloser<br class="pc-none"> Platz<br class="mob-none"> pro Vertreter,
+											einschließlich Zugang<br class="pc-none"> zum Abendessen mit Meisterkursen.
+										</p>
+									</li>
+								</div>
+								<div class="packet-popup__form form-packet">
+									<div class="form-packet__title h3">registration</div>
+									<form action="files/sendmail/webhoock.php" id="formone" class="popup__form form-popup" method="POST">
+										<div class="form-questions__body">
+											<input type="hidden" id="utm_source" name="utm_source">
+											<input type="hidden" id="utm_medium" name="utm_medium">
+											<input type="hidden" id="utm_campaign" name="utm_campaign">
+											<input type="hidden" id="utm_content" name="utm_content">
+											<input type="hidden" id="utm_term" name="utm_term">
+											<input type="text" data-validate data-required required name="email" data-error="Ім’я не вірне" placeholder="Name*" class="name h6 form-packet__item" id="phone">
+											<input type="tel" data-validate data-required required name="phone" data-error="Номер телефону не вірний" placeholder="Phone number" class="tel h6 form-packet__item" id="name">
+											<input type="email" data-validate data-required required name="mail" data-error="Номер телефону не вірний" placeholder="E-mail" class="email h6 form-packet__item" id="mail">
+											<button type="submit" class="content-more__button">
+												<span class="snone h3">send</span>
+											</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="popup-sponsors-two" aria-hidden="true" class="popup popup-sponsors">
+			<div class="popup__wrapper">
+				<div class="popup__content form-width">
+					<button data-close type="button" class="popup__close">
+						<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="1" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path opacity="1" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<button class="prev-popup">
+						<img src="img/arrow.webp" alt="Image">
+					</button>
+					<button class="next-popup">
+						<img src="img/arrow.webp" alt="Image">
+					</button>
+					<div class="popup__text">
+						<div class="popup__packet packet-popup">
+							<h2 class="packet-popup__title h2">silber paket</h2>
+							<div class="packet-popup__content">
+								<div class="packet-popup__lists lists-packet">
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">
+											Standplatzierung: Auswahl eines<br class="pc-none"> geeigneten Standplatzes
+											im Veranstaltungsbereich nach <br class="mob-none"> den Haupt-<br class="pc-none"> und Goldsponsoren.
+										</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">
+											Markenpräsenz: Anerkennung als<br class="pc-none"> Silbersponsor <br class="mob-none">
+											im Programm, auf der<br class="pc-none"> Website und in der mobilen App.
+										</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">
+											Präsenz vor Ort: sichtbare<br class="pc-none"> Logoplatzierung auf<br class="mob-none"> dem
+											Banner und<br class="pc-none"> Bereitstellung von<br class="mob-none"> Schreibmaterial in<br class="pc-none">
+											den Workshopräumen<br class="mob-none"> (Notizbücher und<br class="pc-none"> Stifte mit<br class="mob-none">
+											dem Firmenlogo)
+										</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">
+											Plätze für die Teilnahme: Zwei kostenlose<br class="pc-none">
+											Plätze<br class="mob-none"> für Ihre Vertreter,
+											einschließlich<br class="pc-none"> des Zugangs<br class="mob-none"> zum
+											Masterclass-Dinner<br class="pc-none"> und zum Kadaver-Workshop
+										</p>
+									</li>
+								</div>
+								<div class="packet-popup__form form-packet">
+									<div class="form-packet__title h3">registration</div>
+									<form action="files/sendmail/webhoock.php" id="formone" class="popup__form form-popup" method="POST">
+										<div class="form-questions__body">
+											<input type="hidden" id="utm_source" name="utm_source">
+											<input type="hidden" id="utm_medium" name="utm_medium">
+											<input type="hidden" id="utm_campaign" name="utm_campaign">
+											<input type="hidden" id="utm_content" name="utm_content">
+											<input type="hidden" id="utm_term" name="utm_term">
+											<input type="text" data-validate data-required required name="email" data-error="Ім’я не вірне" placeholder="Name*" class="name h6 form-packet__item" id="phone">
+											<input type="tel" data-validate data-required required name="phone" data-error="Номер телефону не вірний" placeholder="Phone number" class="tel h6 form-packet__item" id="name">
+											<input type="email" data-validate data-required required name="mail" data-error="Номер телефону не вірний" placeholder="E-mail" class="email h6 form-packet__item" id="mail">
+											<button type="submit" class="content-more__button">
+												<span class="snone h3">send</span>
+											</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="popup-sponsors-three" aria-hidden="true" class="popup popup-sponsors">
+			<div class="popup__wrapper">
+				<div class="popup__content form-width">
+					<button data-close type="button" class="popup__close">
+						<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="1" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path opacity="1" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<button class="prev-popup">
+						<img src="img/arrow.webp" alt="Image">
+					</button>
+					<button class="next-popup">
+						<img src="img/arrow.webp" alt="Image">
+					</button>
+					<div class="popup__text">
+						<div class="popup__packet packet-popup">
+							<h2 class="packet-popup__title h2">gold paket</h2>
+							<div class="packet-popup__content">
+								<div class="packet-popup__lists lists-packet">
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">
+											Bevorzugter Veranstaltungsort: Auswahl<br class="pc-none"> des <br class="mob-none"> bevorzugten
+											Standplatzes im<br class="mob-none"> Veranstaltungsbereich
+											(nach Wahl des Hauptsponsors).
+										</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">
+											Markenpräsenz: Erwähnung als<br class="pc-none"> Goldsponsor <br class="mob-none">
+											im Programm, auf der<br class="pc-none"> Website und in der<br class="mob-none">
+											mobilen App.
+										</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">
+											Präsenz vor Ort: sichtbare Platzierung <br>
+											des Logos auf Bildschirmen und<br class="pc-none"> Bannern, <br class="mob-none">
+											sowie die Bereitstellung von<br class="pc-none"> Lanyards für die Teilnehmerausweise.
+										</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">
+											Logo auf Teilnehmergeschenken, z. B. auf<br class="mob-none"> Stofftaschen oder
+											Wasserflaschen, die an<br class="pc-none"> alle Teilnehmer vor Ort verteilt werden.
+										</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">
+											Plätze für Teilnehmer: Zwei<br class="pc-none">
+											kostenlose Plätze für<br class="mob-none"> Ihre Vertreter,<br class="pc-none">
+											einschließlich Zugang<br class="pc-none"> zum Masterclass-Dinner und
+											zum<br class="pc-none"> Kadaver-<br class="mob-none">Workshop.
+										</p>
+									</li>
+								</div>
+								<div class="packet-popup__form form-packet">
+									<div class="form-packet__title h3">registration</div>
+									<form action="files/sendmail/webhoock.php" id="formone" class="popup__form form-popup" method="POST">
+										<div class="form-questions__body">
+											<input type="hidden" id="utm_source" name="utm_source">
+											<input type="hidden" id="utm_medium" name="utm_medium">
+											<input type="hidden" id="utm_campaign" name="utm_campaign">
+											<input type="hidden" id="utm_content" name="utm_content">
+											<input type="hidden" id="utm_term" name="utm_term">
+											<input type="text" data-validate data-required required name="email" data-error="Ім’я не вірне" placeholder="Name*" class="name h6 form-packet__item" id="phone">
+											<input type="tel" data-validate data-required required name="phone" data-error="Номер телефону не вірний" placeholder="Phone number" class="tel h6 form-packet__item" id="name">
+											<input type="email" data-validate data-required required name="mail" data-error="Номер телефону не вірний" placeholder="E-mail" class="email h6 form-packet__item" id="mail">
+											<button type="submit" class="content-more__button">
+												<span class="snone h3">send</span>
+											</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="popup-sponsors-four" aria-hidden="true" class="popup popup-sponsors">
+			<div class="popup__wrapper">
+				<div class="popup__content form-width">
+					<button data-close type="button" class="popup__close">
+						<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="1" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path opacity="1" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<button class="prev-popup">
+						<img src="img/arrow.webp" alt="Image">
+					</button>
+					<button class="next-popup">
+						<img src="img/arrow.webp" alt="Image">
+					</button>
+					<div class="popup__text">
+						<div class="popup__packet packet-popup">
+							<h2 class="packet-popup__title h2">platin paket</h2>
+							<div class="packet-popup__content">
+								<div class="packet-popup__lists lists-packet">
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">
+											Bevorzugter Veranstaltungsort: Wählen<br class="pc-none"> Sie <br class="mob-none"> einen
+											bevorzugten Ort im<br class="mob-none"> Veranstaltungsbereich
+											für maximale<br class="pc-none"> Sichtbarkeit.
+										</p>
+									</li>
+									<li class="lists-packet__list list-open long">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">
+											Markenpräsenz: Anerkennung als<br class="pc-none"> Hauptsponsor in der gesamten
+											Veranstaltungskommunikation (digital<br class="pc-none"> und gedruckt),
+											einschließlich<br class="pc-none"> Programm, Website<br class="pc-none"> und der mobilen App.
+										</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">
+											Präsenz vor Ort: Logo auf Bildschirmen<br class="pc-none"> und Bannern während der<br class="pc-none"> Veranstaltung.
+										</p>
+									</li>
+									<li class="lists-packet__list list-open">
+										<img src="img/li-icon.svg" alt="Image">
+										<p class="h6">
+											Plätze für die Teilnahme: Drei<br class="pc-none">
+											kostenlose Plätze<br class="mob-none"> für Ihre Vertreter,<br class="pc-none">
+											einschließlich des Zugangs<br class="mob-none">
+											zum<br class="pc-none"> Masterclass-Dinner und zum<br class="pc-none"> Kadaver-Workshop.
+										</p>
+									</li>
+								</div>
+								<div class="packet-popup__form form-packet">
+									<div class="form-packet__title h3">registration</div>
+									<form action="files/sendmail/webhoock.php" id="formone" class="popup__form form-popup" method="POST">
+										<div class="form-questions__body">
+											<input type="hidden" id="utm_source" name="utm_source">
+											<input type="hidden" id="utm_medium" name="utm_medium">
+											<input type="hidden" id="utm_campaign" name="utm_campaign">
+											<input type="hidden" id="utm_content" name="utm_content">
+											<input type="hidden" id="utm_term" name="utm_term">
+											<input type="text" data-validate data-required required name="email" data-error="Ім’я не вірне" placeholder="Name*" class="name h6 form-packet__item" id="phone">
+											<input type="tel" data-validate data-required required name="phone" data-error="Номер телефону не вірний" placeholder="Phone number" class="tel h6 form-packet__item" id="name">
+											<input type="email" data-validate data-required required name="mail" data-error="Номер телефону не вірний" placeholder="E-mail" class="email h6 form-packet__item" id="mail">
+											<button type="submit" class="content-more__button">
+												<span class="snone h3">send</span>
+											</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- sponsors end -->
 	</div>
-	<script src="js/app.min.js?_v=20241113134612"></script>
+
+	<script src="js/app.min.js?_v=20241115081849"></script>
+
 </body>
 
 </html>
