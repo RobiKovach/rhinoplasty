@@ -609,7 +609,7 @@ body {
   align-items: flex-start;
   justify-content: space-between;
   max-width: 29.375rem;
-  width: 100%
+  width: 50%
 }
 .button {
   display: flex;
@@ -1456,7 +1456,7 @@ body {
   transform: translateY(10px)
 }
 .width {
-  max-width: 27.5rem
+  max-width: 29.5rem
 }
 .width-de {
   max-width: 37.125rem;
@@ -1761,6 +1761,24 @@ body {
   right: -30px;
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg)
+}
+.underline {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 27px;
+  position: relative;
+  margin-right: 10px
+}
+.underline::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #ff0202;
+  -webkit-transform: rotate(-7deg);
+  transform: rotate(-7deg);
+  left: 0;
+  top: 13px
 }
 .swiper {
   overflow: hidden
@@ -2479,6 +2497,10 @@ body {
     width: 178px;
     border-radius: 3px
   }
+  .width-de {
+    max-width: 21.875rem;
+    width: 100%
+  }
   .long {
     width: 100%
   }
@@ -2617,6 +2639,14 @@ body {
   }
   .form-packet__item {
     padding-top: 1.75rem
+  }
+  .underline {
+    font-size: 16px;
+    line-height: 17px
+  }
+  .underline::before {
+    height: 1.5px;
+    top: 9px
   }
 }
 @media (max-width:47.99875em)and (any-hover:none) {

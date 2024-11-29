@@ -4404,84 +4404,97 @@
             input.addEventListener("keydown", mask, false);
         }));
     }));
-    document.querySelectorAll(".item-sponsors__descriptions").forEach(((el, index) => {
-        el.addEventListener("click", (e => {
-            e.preventDefault();
-            showPopup(index);
+    document.addEventListener("DOMContentLoaded", (function() {
+        let currentPopupIndex = 0;
+        const popupsBlock1 = document.querySelectorAll(".popup-packet");
+        popupsBlock1.forEach((popup => {
+            popup.addEventListener("show", (() => {
+                const packetTitle = popup.querySelector(".packet-popup__title").textContent.trim();
+                popup.querySelector('input[name="packetTitle"]').value = packetTitle;
+            }));
         }));
-    }));
-    const popups = document.querySelectorAll(".popup-sponsors");
-    let currentPopupIndex = 0;
-    function showPopup(index) {
-        popups.forEach((popup => popup.classList.remove("popup_show")));
-        popups[index].classList.add("popup_show");
-        currentPopupIndex = index;
-    }
-    document.querySelectorAll(".prev-popup").forEach((btn => {
-        btn.addEventListener("click", (() => {
-            if (currentPopupIndex > 0) showPopup(currentPopupIndex - 1);
+        function showPopupBlock1(index) {
+            currentPopupIndex = index;
+            popupsBlock1.forEach((popup => popup.classList.remove("popup_show")));
+            const popup = popupsBlock1[index];
+            popup.classList.add("popup_show");
+            popup.dispatchEvent(new Event("show"));
+        }
+        const popupsBlock2 = document.querySelectorAll(".popup-sponsors");
+        popupsBlock2.forEach((popup => {
+            popup.addEventListener("show", (() => {
+                const packetTitle = popup.querySelector(".packet-popup__title").textContent.trim();
+                popup.querySelector('input[name="packetTitle"]').value = packetTitle;
+            }));
         }));
-    }));
-    document.querySelectorAll(".next-popup").forEach((btn => {
-        btn.addEventListener("click", (() => {
-            if (currentPopupIndex < popups.length - 1) showPopup(currentPopupIndex + 1);
+        function showPopupBlock2(index) {
+            currentPopupIndex = index;
+            popupsBlock2.forEach((popup => popup.classList.remove("popup_show")));
+            const popup = popupsBlock2[index];
+            popup.classList.add("popup_show");
+            popup.dispatchEvent(new Event("show"));
+        }
+        document.querySelectorAll(".price-btn").forEach(((el, index) => {
+            el.addEventListener("click", (e => {
+                e.preventDefault();
+                showPopupBlock1(index);
+            }));
         }));
-    }));
-    document.querySelectorAll(".popup__close").forEach((btn => {
-        btn.addEventListener("click", (() => {
-            popups.forEach((popup => popup.classList.remove("popup_show")));
+        document.querySelectorAll(".prev-popup-packet").forEach((btn => {
+            btn.addEventListener("click", (() => {
+                if (currentPopupIndex > 0) showPopupBlock1(currentPopupIndex - 1);
+            }));
         }));
-    }));
-    document.addEventListener("keydown", (e => {
-        if (e.key === "Escape") popups.forEach((popup => popup.classList.remove("popup_show")));
-    }));
-    popups.forEach((popup => {
-        const mc = new Hammer(popup);
-        mc.on("swipeleft", (() => {
-            if (currentPopupIndex < popups.length - 1) showPopup(currentPopupIndex + 1);
+        document.querySelectorAll(".next-popup-packet").forEach((btn => {
+            btn.addEventListener("click", (() => {
+                if (currentPopupIndex < popupsBlock1.length - 1) showPopupBlock1(currentPopupIndex + 1);
+            }));
         }));
-        mc.on("swiperight", (() => {
-            if (currentPopupIndex > 0) showPopup(currentPopupIndex - 1);
+        document.querySelectorAll(".item-sponsors__descriptions").forEach(((el, index) => {
+            el.addEventListener("click", (e => {
+                e.preventDefault();
+                showPopupBlock2(index);
+            }));
         }));
-    }));
-    document.querySelectorAll(".price-btn").forEach(((el, index) => {
-        el.addEventListener("click", (e => {
-            e.preventDefault();
-            showPopup2(index);
+        document.querySelectorAll(".prev-popup").forEach((btn => {
+            btn.addEventListener("click", (() => {
+                if (currentPopupIndex > 0) showPopupBlock2(currentPopupIndex - 1);
+            }));
         }));
-    }));
-    const popups2 = document.querySelectorAll(".popup-packet");
-    let currentPopupIndex2 = 0;
-    function showPopup2(index) {
-        popups2.forEach((popup => popup.classList.remove("popup_show")));
-        popups2[index].classList.add("popup_show");
-        currentPopupIndex2 = index;
-    }
-    document.querySelectorAll(".prev-popup-packet").forEach((btn => {
-        btn.addEventListener("click", (() => {
-            if (currentPopupIndex2 > 0) showPopup2(currentPopupIndex2 - 1);
+        document.querySelectorAll(".next-popup").forEach((btn => {
+            btn.addEventListener("click", (() => {
+                if (currentPopupIndex < popupsBlock2.length - 1) showPopupBlock2(currentPopupIndex + 1);
+            }));
         }));
-    }));
-    document.querySelectorAll(".next-popup-packet").forEach((btn => {
-        btn.addEventListener("click", (() => {
-            if (currentPopupIndex2 < popups2.length - 1) showPopup2(currentPopupIndex2 + 1);
+        document.querySelectorAll(".popup__close").forEach((closeBtn => {
+            closeBtn.addEventListener("click", (() => {
+                popupsBlock1.forEach((popup => popup.classList.remove("popup_show")));
+                popupsBlock2.forEach((popup => popup.classList.remove("popup_show")));
+            }));
         }));
-    }));
-    document.querySelectorAll(".popup__close").forEach((btn => {
-        btn.addEventListener("click", (() => {
-            popups2.forEach((popup => popup.classList.remove("popup_show")));
+        document.addEventListener("keydown", (e => {
+            if (e.key === "Escape") {
+                popupsBlock1.forEach((popup => popup.classList.remove("popup_show")));
+                popupsBlock2.forEach((popup => popup.classList.remove("popup_show")));
+            }
         }));
-    }));
-    document.addEventListener("keydown", (e => {
-        if (e.key === "Escape") popups2.forEach((popup => popup.classList.remove("popup_show")));
-    }));
-    popups2.forEach((popup => {
-        const mc = new Hammer(popup);
-        mc.on("swipeleft", (() => {
-            if (currentPopupIndex2 < popups2.length - 1) showPopup2(currentPopupIndex2 + 1);
+        popupsBlock1.forEach((popup => {
+            const mc = new Hammer(popup);
+            mc.on("swipeleft", (() => {
+                if (currentPopupIndex < popupsBlock1.length - 1) showPopupBlock1(currentPopupIndex + 1);
+            }));
+            mc.on("swiperight", (() => {
+                if (currentPopupIndex > 0) showPopupBlock1(currentPopupIndex - 1);
+            }));
         }));
-        mc.on("swiperight", (() => {
-            if (currentPopupIndex2 > 0) showPopup2(currentPopupIndex2 - 1);
+        popupsBlock2.forEach((popup => {
+            const mc = new Hammer(popup);
+            mc.on("swipeleft", (() => {
+                if (currentPopupIndex < popupsBlock2.length - 1) showPopupBlock2(currentPopupIndex + 1);
+            }));
+            mc.on("swiperight", (() => {
+                if (currentPopupIndex > 0) showPopupBlock2(currentPopupIndex - 1);
+            }));
         }));
     }));
     window["FLS"] = true;
